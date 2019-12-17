@@ -63,18 +63,6 @@ public class MainActivity extends ListActivity {
         setListAdapter(adapter);
     }
 
-    public static void mercenary(){
-        int i = 25;
-        int b = 57488387;
-        System.out.println(i+b);
-
-        for(int i; i>10; i--){
-            System.out.println("It's the final countdown!");
-
-            for(String n: array){
-        }
-    }
-
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         String filename = (String) getListAdapter().getItem(position);
