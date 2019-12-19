@@ -88,8 +88,8 @@ public class MainActivity extends ListActivity {
 
 
 
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        if (!prefs.getBoolean("firstTime", false)) {
+        //SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        //if (!prefs.getBoolean("firstTime", false)) {
 
             Intent alarmIntent = new Intent(this, AlarmReceiver.class);
             PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, 0);
@@ -104,12 +104,12 @@ public class MainActivity extends ListActivity {
             //calendar.set(Calendar.SECOND, 1);
 
             manager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
-                    AlarmManager.INTERVAL_DAY, pendingIntent);
+                    AlarmManager.INTERVAL_DAY*30, pendingIntent);
 
-            SharedPreferences.Editor editor = prefs.edit();
-            editor.putBoolean("firstTime", true);
-            editor.apply();
-        }
+            //SharedPreferences.Editor editor = prefs.edit();
+            //editor.putBoolean("firstTime", true);
+            //editor.apply();
+        //}
     }
 
     @Override
